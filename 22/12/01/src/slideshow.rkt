@@ -1,0 +1,65 @@
+#lang slideshow
+(begin 
+  (current-main-font "ComicNeueSansID")
+  (current-font-size 40)
+  (require slideshow-text-style ppict/2 ppict/slideshow2)
+       (with-text-style
+         #:defaults (#:face "ComicNeueSansID")
+         ([heading #:size 70 #:bold? #t]
+          [subheading #:size 40 #:bold? #f #:italic? #t]
+          [auth #:size 40 #:color "firebrick"]
+          )
+         (pslide (heading "okapi bm25")
+                 (auth "by franklin liu")
+                 (auth "professional idiot")
+                 )
+         (pslide #:go (coord 0.1 0.1 'lt)
+                 (heading "googly woogly")
+                 #:go (coord 0.1 0.25 'lt)
+                 #:go (coord 0.2 0.5 'lc)
+                 (t "how to maek search engine")
+                 (t "ranking function")
+                 (item "# of times term occurs")
+                 (item "length of document")
+                 (item "importance of a query term")
+
+                 )
+         (pslide #:go (coord 0.1 0.1 'lt)
+                 (heading "okapi bm25")
+                 #:go (coord 0.1 0.25 'lt)
+                 #:go (coord 0.2 0.5 'lc)
+                 (t "ranking function")
+                 (bitmap "img/bm25_equation.png")
+                 (t "where")
+                 (item "f(qi, D) is # of times qi appears in document D")
+                 (item "|D| is length of D in words, d_avg is average document length")
+                 (item "and k1 and b are tuned parameters")
+
+                 )
+
+         (pslide #:go (coord 0.1 0.1 'lt)
+                 (heading "idf")
+                 #:go (coord 0.2 0.5 'lc)
+                 (t "inverse document frequency")
+                 (t "how important a term is")
+                (t "penalizes common terms")
+                 (t "'the doctor' vs 'doctor'")
+                 (bitmap "img/idf_equation.png")
+                 )
+         (pslide #:go (coord 0.1 0.1 'lt)
+                 (heading "denominator")
+                 #:go (coord 0.2 0.5 'lc)
+                 (t "words here")
+                 (bitmap "img/denominator.png")
+                 )
+         (pslide #:go (coord 0.1 0.1 'lt)
+                 (heading "numerator")
+                 #:go (coord 0.2 0.5 'lc)
+                 (t "blah")
+                 (bitmap "img/numerator.png")
+                 )
+         
+
+
+         )
+)
